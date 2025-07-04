@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 17:12:42 by clnicola          #+#    #+#             */
-/*   Updated: 2025/07/03 20:02:44 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/07/04 14:46:40 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ int	put_hexa_void(void *add)
 
 	addr = (unsigned long)add;
 	count = 0;
+	if(!add)
+	{
+		count += ft_putstr("(nil)");
+		return (count);
+	}
 	count += ft_putstr("0x");
 	if (addr == 0)
 		count += ft_putchar('0');

@@ -26,6 +26,7 @@ ft_putnbr_unsigned.c \
 put_hexa.c \
 put_hexa_cap.c \
 
+.DEFAULT_GOAL := all
 HEADER = $(SRC_DIR)/ft_printf.h
 OBJS = $(SOURCES:.c=.o)
 

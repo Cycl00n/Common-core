@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 11:38:24 by clnicola          #+#    #+#             */
-/*   Updated: 2025/07/03 19:51:28 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/07/04 14:45:23 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,18 @@ int	ft_printf(const char *format, ...)
 	va_end(arg);
 	return (count);
 }
-/*int main()
+/*#include <stdio.h>
+
+int main()
 {
+	void	*ptr;
 	char	test = 'A';
 	char	test2 = 'b';
 	int		test3 = -1;
 	char *	test4 = "Hello World";
 	ft_printf("Test: %c and %c with some %d\n%s %%", test, test2, test3, test4);
+	ptr = NULL;
+	ft_printf("%p\n", ptr);
+	printf("%p\n", ptr);
 	return 0;
 }*/
