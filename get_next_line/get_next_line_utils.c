@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/04 10:39:01 by clnicola          #+#    #+#             */
-/*   Updated: 2025/07/07 19:58:54 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/07/08 14:23:33 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,36 @@ int	ft_strlen(const char *str)
 
 char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i] != (char)c)
+	if (!s)
+		return (NULL);
+	while (*s)
 	{
-		if (s[i] == '\0')
-		{
-			return (NULL);
-		}
-		i ++;
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
 	}
-	return ((char *)&s[i]);
+	if (c == '\0')
+		return ((char *)s);
+	return (NULL);
+}
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	char	*s;
+	size_t	j;
+
+	j = 0;
+	if (size != 0 && nmemb > (size_t)-1 / size)
+		return (NULL);
+	s = (char *)malloc(nmemb * size);
+	if (s == NULL)
+		return (NULL);
+	while (j < nmemb * size)
+	{
+		s[j] = 0;
+		j++;
+	}
+	return (s);
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -83,4 +101,3 @@ char	*ft_strdup(const char *str)
 		s[i] = str[i];
 	return (s);
 }
-
