@@ -30,7 +30,7 @@ int	put_hexa_void(void *add)
 
 	addr = (unsigned long)add;
 	count = 0;
-	if(!add)
+	if (!add)
 	{
 		count += ft_putstr("(nil)");
 		return (count);
