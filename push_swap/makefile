@@ -10,7 +10,6 @@ SOURCES = \
 	push_swap.c \
 	push_swap_helpers.c\
 	assign_a.c\
-	ft_stackadd_back.c\
 	ft_stacklast.c\
 	ft_stacknew.c\
 	operations.c\

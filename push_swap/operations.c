@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 15:41:20 by clnicola          #+#    #+#             */
-/*   Updated: 2025/07/22 17:20:43 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/07/22 17:29:01 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,26 @@ void	ft_ss(t_stack **stack_a, t_stack **stack_b, int flag)
 
 void	ft_pb(t_stack **stack_a, t_stack **stack_b, int flag)
 {
-	t_stack	*tmp;
+	t_stack	*temp;
 
 	if (!(*stack_a))
 		return ;
-	tmp = *stack_a;
+	temp = *stack_a;
 	*stack_a = (*stack_a)-> next;
-	tmp -> next = NULL;
-	ft_stackadd_front(stack_b, tmp);
+	ft_stackadd_front(stack_b, temp);
 	if (flag == 1)
 		ft_printf("pb\n");
+}
+
+void	ft_pa(t_stack **stack_a, t_stack **stack_b, int flag)
+{
+	t_stack	*temp;
+
+	if (!(*stack_b))
+		return ;
+	temp = *stack_b;
+	*stack_b = (*stack_b)-> next;
+	ft_stackadd_front(stack_a, temp);
+	if (flag == 1)
+		ft_printf("pa\n");
 }

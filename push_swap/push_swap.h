@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 11:39:36 by clnicola          #+#    #+#             */
-/*   Updated: 2025/07/22 17:05:43 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/07/22 17:32:00 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ t_stack	*assign_a(int argc, char **argv);
 void	ft_stackadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_stacklast(t_stack *lst);
 t_stack	*ft_stacknew(int content);
+void	ft_stackadd_front(t_stack **lst, t_stack *new);
 int		ft_min(t_stack *lst);
 int		ft_max(t_stack *lst);
 int		ft_stack_size(t_stack *lst);
@@ -34,6 +35,6 @@ void	ft_sa(t_stack **stack_a, int flag);
 void	ft_sb(t_stack **stack_b, int flag);
 void	ft_ss(t_stack **stack_a,t_stack **stack_b, int flag);
 void	ft_pb(t_stack **stack_a, t_stack **stack_b, int flag);
-void	ft_stackadd_front(t_stack **lst, t_stack *new);
+void	ft_pa(t_stack **stack_a, t_stack **stack_b, int flag);
 
 #endif
