@@ -1,36 +1,35 @@
+NAME = push_swap
 
-NAME = push_swap.a
-OBJS = $(SOURCES:.c=.o)
 CC = cc
 C_FLAGS = -Wall -Wextra -Werror
-SRC_DIR = push_swap
+
+LIBFT_DIR = Libft
+LIBFT = $(LIBFT_DIR)/libft.a
+
 SOURCES = \
-	push_swap.c
-HEADER = push_swap.h
+	push_swap.c \
+	push_swap_helpers.c
 
-.DEFAULT_GOAL := all
-HEADER = $(SRC_DIR)/push_swap.h
-OBJS = $(SOURCES:.c=.o)
+HEADER = -I.
 
-NAME:
-	@echo "$(NAME)"
+OBJ = $(SOURCES:.c=.o)
+
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
-	@echo "$(NAME) created."
-	
-$(SRC_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
-	$(CC) $(C_FLAGS) -c $< -o $@ -I$(SRC_DIR)
+%.o: %.c
+	$(CC) $(C_FLAGS) -c $< -o $@ $(HEADER)
+
+$(NAME): $(OBJ)
+	$(CC) $(C_FLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 clean: 
-	rm -f $(OBJS)
+	rm -rf $(OBJ)
 	@echo "Temp files removed"
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 	@echo "Temp files and binaries removed."
-	
+
 re: fclean all
