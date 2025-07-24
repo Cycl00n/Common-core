@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 11:38:35 by clnicola          #+#    #+#             */
-/*   Updated: 2025/07/22 17:19:21 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/07/24 11:12:34 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int push_swap(int arg_count, ...)
 
 int main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack	*stack_a = NULL;
+	t_stack	*stack_b = NULL;
 	t_stack	*head;
 	stack_a = assign_a(argc, argv);
 	if(argc < 2)
@@ -43,9 +43,14 @@ int main(int argc, char **argv)
 		stack_a = stack_a->next;
 	}
 	stack_a = head;
-	ft_pb(&stack_a, &stack_b, 1);
-	ft_printf("After swap:\n");
-	ft_printf("Stack b:\n%d\n",stack_b -> nbr);
+	ft_ra(&stack_a,1);
+	ft_printf("After operation:\n");
+	ft_printf("stack_b:\n");
+	while(stack_b)
+	{
+		ft_printf("%d\n",stack_b -> nbr);
+		stack_b = stack_b -> next;
+	}
 	ft_printf("Stack a:\n");
 	while(stack_a)
 	{

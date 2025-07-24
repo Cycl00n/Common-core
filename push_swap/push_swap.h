@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 11:39:36 by clnicola          #+#    #+#             */
-/*   Updated: 2025/07/22 17:32:00 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/07/24 11:31:48 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,8 @@ void	ft_sb(t_stack **stack_b, int flag);
 void	ft_ss(t_stack **stack_a,t_stack **stack_b, int flag);
 void	ft_pb(t_stack **stack_a, t_stack **stack_b, int flag);
 void	ft_pa(t_stack **stack_a, t_stack **stack_b, int flag);
+void	ft_ra(t_stack **stack_a, int flag);
+void	ft_rb(t_stack **stack_b, int flag);
+void	ft_rr(t_stack **stack_a, t_stack **stack_b, int flag);
 
 #endif

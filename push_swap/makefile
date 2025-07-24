@@ -13,7 +13,7 @@ SOURCES = \
 	ft_stacklast.c\
 	ft_stacknew.c\
 	operations.c\
-	
+	operations2.c\
 
 HEADER = -I.
 
