@@ -1,58 +1,73 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations2.c                                      :+:      :+:    :+:   */
+/*   operation3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 17:30:46 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/01 10:32:33 by clnicola         ###   ########.fr       */
+/*   Created: 2025/08/01 09:57:18 by clnicola          #+#    #+#             */
+/*   Updated: 2025/08/01 10:34:13 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_ra(t_stack **stack_a, int flag)
+void	ft_rra(t_stack **stack_a, int flag)
 {
 	t_stack	*head;
-	t_stack	*end;
+	int		i;
 
-	if (!(*stack_a)-> next || !*stack_a)
+	if (!stack_a || !(*stack_a)-> next)
 		return ;
+	i = 0;
 	head = *stack_a;
-	end = ft_stacklast(*stack_a);
-	end -> next = head;
-	*stack_a = head -> next;
+	while ((*stack_a)-> next)
+	{
+		*stack_a = (*stack_a)-> next;
+		i ++;
+	}
+	(*stack_a)-> next = head;
+	while (i > 1)
+	{
+		head = head -> next;
+		i --;
+	}
 	head -> next = NULL;
 	if (flag == 1)
-		ft_printf("ra\n");
+		ft_printf("rra\n");
 }
 
-void	ft_rb(t_stack **stack_b, int flag)
+void	ft_rrb(t_stack **stack_b, int flag)
 {
 	t_stack	*head;
-	t_stack	*end;
+	int		i;
 
-	if (!stack_b || !(*stack_b)-> next)
+	if (!*stack_b || !(*stack_b)-> next)
 		return ;
+	i = 0;
 	head = *stack_b;
-	end = ft_stacklast(*stack_b);
-	end -> next = head;
-	*stack_b = head -> next;
+	while ((*stack_b)-> next)
+	{
+		*stack_b = (*stack_b)-> next;
+		i ++;
+	}
+	(*stack_b)-> next = head;
+	while (i > 1)
+	{
+		head = head -> next;
+		i--;
+	}
 	head -> next = NULL;
 	if (flag == 1)
-		ft_printf("rb\n");
+		ft_printf("rrb\n");
 }
 
-void	ft_rr(t_stack **stack_a, t_stack **stack_b, int flag)
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b, int flag)
 {
-	t_stack	head;
-	t_stack	end;
-
 	if (!stack_b || !stack_a || (*stack_b)-> next || ! (*stack_a)-> next)
 		return ;
-	ft_ra(stack_a, 0);
-	ft_rb(stack_b, 0);
+	ft_rra(stack_a, 0);
+	ft_rrb(stack_b, 0);
 	if (flag == 1)
-		ft_printf("rr\n");
+		ft_printf("rrr\n");
 }

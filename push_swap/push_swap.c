@@ -6,27 +6,11 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 11:38:35 by clnicola          #+#    #+#             */
-/*   Updated: 2025/07/24 11:12:34 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/06 13:28:55 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int push_swap(int arg_count, ...)
-{
-	va_list	arg;
-	int	a;
-	int value;
-	
-	va_start(arg, arg_count);
-	for(a = 0; a < arg_count; a++)
-	{
-		value = va_arg(arg, int);
-		ft_printf("%d \n", value);
-	}
-	va_end(arg);
-	return(0);
-}
 
 int main(int argc, char **argv)
 {
@@ -34,8 +18,11 @@ int main(int argc, char **argv)
 	t_stack	*stack_b = NULL;
 	t_stack	*head;
 	stack_a = assign_a(argc, argv);
-	if(argc < 2)
+	if(non_digit(argv) || duplicate_numbers(stack_a))
+	{
+		ft_printf("Error\n");
 		return(0);
+	}
 	head = stack_a;
 	while(stack_a)
 	{
@@ -43,19 +30,24 @@ int main(int argc, char **argv)
 		stack_a = stack_a->next;
 	}
 	stack_a = head;
-	ft_ra(&stack_a,1);
-	ft_printf("After operation:\n");
-	ft_printf("stack_b:\n");
-	while(stack_b)
+	if (!ft_issorted(stack_a))
 	{
-		ft_printf("%d\n",stack_b -> nbr);
-		stack_b = stack_b -> next;
+		if(ft_stack_size(stack_a) == 2)
+			ft_sa(&stack_a, 1);
+		else if (ft_stack_size(stack_a) == 3)
+			sort_three(&stack_a);
+		/*else
+			sorting(stack_a, stack_b);*/
 	}
-	ft_printf("Stack a:\n");
+	head = stack_a;
 	while(stack_a)
 	{
 		ft_printf("%d\n",stack_a -> nbr);
 		stack_a = stack_a->next;
 	}
+	stack_a = head;
+	if(ft_issorted(stack_a))
+		ft_printf("sorted\n");
+	free_stack(&stack_a);
 	return(0);
 }

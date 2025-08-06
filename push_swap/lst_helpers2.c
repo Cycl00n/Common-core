@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assign_a.c                                         :+:      :+:    :+:   */
+/*   lst_helpers2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 15:13:21 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/06 10:06:54 by clnicola         ###   ########.fr       */
+/*   Created: 2025/08/06 11:58:11 by clnicola          #+#    #+#             */
+/*   Updated: 2025/08/06 12:01:43 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*assign_a(int argc, char **argv)
+t_stack	*ft_stacklast(t_stack *lst)
 {
-	t_stack	*stack_a;
-	int		i;
-	int		j;
+	if (!lst)
+		return (NULL);
+	while (lst -> next)
+		lst = lst -> next;
+	return (lst);
+}
+t_stack	*ft_stacknew(int content)
+{
+	t_stack	*new_node;
 
-	stack_a = NULL;
-	i = 1;
-	while (i < argc)
-	{
-		j = ft_atoi(argv[i]);
-		ft_stackadd_back(&stack_a, ft_stacknew(j));
-		i++;
-	}
-	return (stack_a);
+	new_node = (t_stack *) malloc (sizeof(t_stack));
+	if (!new_node)
+		return (NULL);
+	new_node -> nbr = content;
+	new_node -> next = NULL;
+	return (new_node);
 }

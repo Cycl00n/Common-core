@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assign_a.c                                         :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 15:13:21 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/06 10:06:54 by clnicola         ###   ########.fr       */
+/*   Created: 2025/08/06 13:24:23 by clnicola          #+#    #+#             */
+/*   Updated: 2025/08/06 13:29:31 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*assign_a(int argc, char **argv)
+void	free_stack(t_stack **stack)
 {
-	t_stack	*stack_a;
-	int		i;
-	int		j;
+	t_stack	*temp;
 
-	stack_a = NULL;
-	i = 1;
-	while (i < argc)
+	if(!stack)
+		return;
+	while (temp)
 	{
-		j = ft_atoi(argv[i]);
-		ft_stackadd_back(&stack_a, ft_stacknew(j));
-		i++;
+		temp = (*stack)-> next;
+		(*stack)-> nbr = 0;
+		free(*stack);
+		*stack = temp;
 	}
-	return (stack_a);
 }

@@ -8,12 +8,15 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 SOURCES = \
 	push_swap.c \
-	push_swap_helpers.c\
+	lst_helpers.c\
+	lst_helpers2.c\
 	assign_a.c\
-	ft_stacklast.c\
-	ft_stacknew.c\
 	operations.c\
 	operations2.c\
+	operation3.c\
+	errors.c\
+	sorting_helpers.c\
+	free_stack.c\
 
 HEADER = -I.
 
