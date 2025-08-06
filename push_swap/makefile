@@ -17,6 +17,8 @@ SOURCES = \
 	errors.c\
 	sorting_helpers.c\
 	free_stack.c\
+	sorting_stacks.c\
+	
 
 HEADER = -I.
 

@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 11:39:36 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/06 13:29:03 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/06 15:07:16 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ typedef struct s_stack
 {
 	long			nbr;
 	long			index;
+	int				cost;
+	int				ischeapest;
+	int				isabovemid;
+	struct s_stack	*target;
 	struct s_stack	*next;
 	struct s_stack	*previous;
 }	t_stack;
@@ -46,5 +50,7 @@ int		duplicate_numbers(t_stack *stack_a);
 int		ft_issorted(t_stack *stack);
 void	sort_three(t_stack **stack_a);
 void	free_stack(t_stack **stack);
+long	ft_atol(const char *nptr);
+void	sorting_stacks(t_stack **stack_a, t_stack **stack_b);
 
 #endif
