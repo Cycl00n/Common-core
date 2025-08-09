@@ -16,6 +16,8 @@ SOURCES = \
 	operation3.c\
 	errors.c\
 	sorting_helpers.c\
+	sorting_helpers2.c\
+	sorting_helpers3.c\
 	free_stack.c\
 	sorting_stacks.c\
 	

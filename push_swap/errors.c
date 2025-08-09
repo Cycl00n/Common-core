@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 12:04:04 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/06 13:44:02 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/09 15:23:23 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	non_digit(char **argv)
 {
 	int	i;
-	int j;
+	int	j;
 
 	j = 1;
 	i = 0;
@@ -24,7 +24,7 @@ int	non_digit(char **argv)
 		while (argv[j][i])
 		{
 			if ((ft_isalpha(argv[j][i])))
-				return(1);
+				return (1);
 			i++;
 		}
 		i = 0;
@@ -32,20 +32,21 @@ int	non_digit(char **argv)
 	}
 	return (0);
 }
+
 int	duplicate_numbers(t_stack *stack_a)
 {
 	t_stack	*tmp;
 
 	while (stack_a)
 	{
-		tmp = stack_a -> next;
+		tmp = stack_a->next;
 		while (tmp)
 		{
-			if (stack_a -> nbr == tmp -> nbr)
+			if (stack_a->nbr == tmp->nbr)
 				return (1);
-			tmp = tmp -> next;
+			tmp = tmp->next;
 		}
-		stack_a = stack_a -> next;
+		stack_a = stack_a->next;
 	}
 	return (0);
 }

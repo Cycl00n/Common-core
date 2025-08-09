@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 15:13:21 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/06 13:53:49 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/09 18:41:54 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ long	ft_atol(const char *nptr)
 	while ((nptr[i] >= '0') && (nptr[i] <= '9'))
 	{
 		result = (result * 10) + (nptr[i] - '0');
-		i ++;
+		i++;
 	}
 	return (result * sign);
 }
@@ -48,12 +48,12 @@ t_stack	*assign_a(int argc, char **argv)
 	while (i < argc)
 	{
 		j = ft_atol(argv[i]);
-		if(j > 2147483647 || j < -2147483648)
-			{
-				ft_printf("Error\n");
-				return(NULL);
-			}
-		ft_stackadd_back(&stack_a, ft_stacknew((int)j));
+		if (j > 2147483647 || j < -2147483648)
+		{
+			ft_printf("Error\n");
+			return (NULL);
+		}
+		ft_stackadd_back(&stack_a, ft_stacknew(j));
 		i++;
 	}
 	return (stack_a);
