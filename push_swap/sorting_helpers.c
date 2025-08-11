@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 11:16:32 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/09 19:30:37 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 18:11:06 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ void	give_index(t_stack *stack)
 	while (stack)
 	{
 		stack->index = i;
-		if (mid <= i)
+		if (i <= mid)
 			stack->isabovemid = 1;
 		else
 			stack->isabovemid = 0;
-		i++;
 		stack = stack->next;
+		i++;
 	}
 }
 

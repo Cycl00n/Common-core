@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 15:40:53 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/11 15:53:59 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 18:00:34 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	set_cheapest(t_stack *stack)
 
 	if (!stack)
 		return ;
-	cheapest = stack;
-	cheapest_cost = stack->cost;
+	cheapest_cost = 2147483647;
 	while (stack)
 	{
 		if (stack->cost < cheapest_cost)
