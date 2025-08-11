@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 17:30:46 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/10 05:50:03 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:54:51 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	ft_rr(t_stack **stack_a, t_stack **stack_b, int flag)
 	t_stack	head;
 	t_stack	end;
 
-	if (!stack_a || !*stack_a || !(*stack_a)->next ||
-		!stack_b || !*stack_b || !(*stack_b)->next)
+	if (!stack_a || !*stack_a || !(*stack_a)->next
+		|| !stack_b || !*stack_b || !(*stack_b)->next)
 		return ;
 	ft_ra(stack_a, 0);
 	ft_rb(stack_b, 0);

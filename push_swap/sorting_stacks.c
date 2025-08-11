@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 14:37:01 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/09 18:49:03 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:54:32 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	to_b(t_stack **stack_a, t_stack **stack_b)
 	single_rotate_b(stack_b, cheapest->target);
 	ft_pb(stack_a, stack_b, 1);
 }
+
 void	to_a(t_stack **stack_a, t_stack **stack_b)
 {
 	if (*stack_b && (*stack_b)->target)

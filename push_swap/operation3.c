@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/01 09:57:18 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/10 06:45:46 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:53:07 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ void	ft_rrb(t_stack **stack_b, int flag)
 
 void	ft_rrr(t_stack **stack_a, t_stack **stack_b, int flag)
 {
-	if (!stack_a || !*stack_a || !(*stack_a)->next ||
-		!stack_b || !*stack_b || !(*stack_b)->next)
+	if (!stack_a || !*stack_a || !(*stack_a)->next
+		|| !stack_b || !*stack_b || !(*stack_b)->next)
 		return ;
 	ft_rra(stack_a, 0);
 	ft_rrb(stack_b, 0);

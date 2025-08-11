@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 11:39:36 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/09 18:43:26 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:35:58 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_stack
 	struct s_stack	*previous;
 }					t_stack;
 
-t_stack				*assign_a(int argc, char **argv);
+void				assign_a(t_stack **stack_a, char **argv, int start);
 void				ft_stackadd_back(t_stack **lst, t_stack *new);
 t_stack				*ft_stacklast(t_stack *lst);
 t_stack				*ft_stacknew(int content);

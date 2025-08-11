@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 15:40:53 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/09 18:48:31 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:53:59 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	single_rotate_a(t_stack **stack_a, t_stack *head)
 	while (*stack_a != head)
 		if (head->isabovemid == 1)
 			ft_ra(stack_a, 1);
-		else
-			ft_rra(stack_a, 1);
+	else
+		ft_rra(stack_a, 1);
 }
 
 void	single_rotate_b(t_stack **stack_b, t_stack *head)
@@ -69,6 +69,6 @@ void	single_rotate_b(t_stack **stack_b, t_stack *head)
 	while (*stack_b != head)
 		if (head->isabovemid == 1)
 			ft_rb(stack_b, 1);
-		else
-			ft_rrb(stack_b, 1);
+	else
+		ft_rrb(stack_b, 1);
 }

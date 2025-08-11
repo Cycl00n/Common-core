@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 17:05:46 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/09 19:05:08 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:54:20 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	find_match_b(t_stack *stack_a, t_stack *stack_b)
 		stack_b = stack_b->next;
 	}
 }
+
 void	set_values_b(t_stack *stack_a, t_stack *stack_b)
 {
 	give_index(stack_a);

@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 15:13:21 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/09 18:41:54 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:35:20 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,24 +37,20 @@ long	ft_atol(const char *nptr)
 	return (result * sign);
 }
 
-t_stack	*assign_a(int argc, char **argv)
+void	assign_a(t_stack **stack_a, char **argv, int start)
 {
-	t_stack	*stack_a;
 	int		i;
 	long	j;
 
-	stack_a = NULL;
-	i = 1;
-	while (i < argc)
+	i = start;
+	while (argv[i])
 	{
 		j = ft_atol(argv[i]);
 		if (j > 2147483647 || j < -2147483648)
-		{
-			ft_printf("Error\n");
-			return (NULL);
-		}
-		ft_stackadd_back(&stack_a, ft_stacknew(j));
+			free_stack(stack_a);
+		if (duplicate_numbers(*stack_a))
+			free_stack(stack_a);
+		ft_stackadd_back(stack_a, ft_stacknew(j));
 		i++;
 	}
-	return (stack_a);
 }
