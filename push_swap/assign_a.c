@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 15:13:21 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/11 15:35:20 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:25:42 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,13 @@ void	assign_a(t_stack **stack_a, char **argv, int start)
 	i = start;
 	while (argv[i])
 	{
+		if (error_syntax(argv[i]))
+			exit_free(stack_a);
 		j = ft_atol(argv[i]);
 		if (j > 2147483647 || j < -2147483648)
-			free_stack(stack_a);
-		if (duplicate_numbers(*stack_a))
-			free_stack(stack_a);
+			exit_free(stack_a);
+		if (duplicate_numbers(*stack_a, j))
+			exit_free(stack_a);
 		ft_stackadd_back(stack_a, ft_stacknew(j));
 		i++;
 	}

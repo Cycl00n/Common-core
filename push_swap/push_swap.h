@@ -6,7 +6,7 @@
 /*   By: clnicola <clnicola@student.42luxembourg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 11:39:36 by clnicola          #+#    #+#             */
-/*   Updated: 2025/08/11 15:35:58 by clnicola         ###   ########.fr       */
+/*   Updated: 2025/08/11 17:22:51 by clnicola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void				ft_rra(t_stack **stack_a, int flag);
 void				ft_rrb(t_stack **stack_b, int flag);
 void				ft_rrr(t_stack **stack_a, t_stack **stack_b, int flag);
 int					non_digit(char **argv);
-int					duplicate_numbers(t_stack *stack_a);
+int					duplicate_numbers(t_stack *stack_a, int nbr);
 int					ft_issorted(t_stack *stack);
 void				sort_three(t_stack **stack_a);
 void				free_stack(t_stack **stack);
@@ -70,5 +70,7 @@ void				rev_rotate_stacks(t_stack **stack_a, t_stack **stack_b,
 void				single_rotate_a(t_stack **stack_a, t_stack *head);
 void				single_rotate_b(t_stack **stack_b, t_stack *head);
 void				ascending_order(t_stack **stack_a);
+void				exit_free(t_stack **stack_a);
+int					error_syntax(char *str);
 
 #endif
